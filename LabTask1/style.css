@@ -55,6 +55,7 @@
        width: 100%;
         height: 600px;
     }
+
     
     #simple_txt{
         margin-top: 20%;
@@ -72,3 +73,129 @@
         height: 90%;
         width: 110%;
     }
+.carousel-item{
+    height:700px;
+}
+.c-image{
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: rgb(38, 38, 39);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    position: fixed;  /* Change to fixed position */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+   
+
+.home.show .form-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+   form{
+    width: 110%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .form-close{
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    color: black;
+    opacity: 0.7;
+    cursor: pointer;
+    font-size: 30px;
+   }
+   
+
+   .Signup-form{
+    margin-bottom: -10%;
+    display: none;
+   }
+   .Signup-form .signup-btn{
+    margin-top: -10%;
+   }
+
+   .form-container.active .Signup-form{
+    display: block;
+   }
+
+   .form-container.active .login-form{
+    display: none;
+   }
+   .inputbox{
+    display: flex;
+   align-items:center ;
+  
+    margin-top: 20px;
+    height: 40px;
+    width: 100%;
+   }
+   .inputbox input{
+    height: 100%;
+    width: 95%;
+    border: none;
+    padding-left: 50px;
+    border-bottom: 1.5px solid gray;
+   }
+
+   .inputbox i.emial{
+    position: relative;
+    right: 90%;
+   }
+
+   .inputbox i.Lock{
+    position: relative;
+    right: 90%;
+   }
+  .button{
+    margin-top: 10%;
+ position: relative;
+ 
+    height: 60px;
+    width: 100%;
+  }
+  
+ .opt-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .checkbox input{
+    accent-color: blue;
+ }
+
+ @media screen and (max-width: 768px) {
+    .form-container {
+        width: 80%;  /* Adjust the width for smaller screens */
+    }
+}
