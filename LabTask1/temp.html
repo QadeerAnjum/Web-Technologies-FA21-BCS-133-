@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Add Bootstrap CSS link -->
   
   <style>
@@ -51,7 +52,7 @@
 <body>
 
   <div class="center-div ">
-    <form name="myform" onsubmit="validateValues(event)">
+    <form id="contact-form"  name="myform" >
       <div class="mb-3 col-md-10">
         <input name="Name" class="form-control" id="exampleInputName" aria-describedby="NameHelp" placeholder="Enter Your Name">
       </div>
@@ -60,31 +61,60 @@
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3 col-md-10">
-        <input name="Message" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Message Here">
+        <input name="Message" type="text" class="form-control" id="exampleInputMessage" placeholder="Enter Your Message Here">
       </div>
-      <div  class="mb-3 "><button type="submit" class="btn btn-primary" >Submit</button></div>
+      <div  class="mb-3 "><button type="submit" id="Submit"  class="btn btn-primary" >Submit</button></div>
       
     </form>
   </div>
 <script>
- function validateValues(event) {
-    event.preventDefault();                                 
-    console.log(event);
-    var form = event.target;
-    let nameValue=form.elements['Name'].value
-    let emailValue = form.elements['Email'].value;
-    let passVal= form.elements['Message'].value;
+//  function validateValues() {
+    
+//     var form = event.target;
+//     let nameValue=form.elements['Name'].value
+//     let emailValue = form.elements['Email'].value;
+//     let passVal= form.elements['Message'].value;
 
-    if(nameValue==''){
-        alert("Please Enter Name")
+//     if(nameValue==''){
+//         alert("Please Enter Name");
+     
+//     }else if(emailValue==''){
+//       alert("please enter email");
+//     }else if(passVal==''){
+//       alert("please enter message")
+//     }
+   
+//     }
+
+$(document).ready(function(){
+  $('#Submit').click(function(event){
+    event.preventDefault();
+    var name= $('#exampleInputName').val();
+    email=$('#exampleInputEmail1').val();
+    message=$('#exampleInputMessage').val();
+
+
+    if(name==''){
+      alert("please enter your Name");
+    }else if(email==''){
+      alert("please enter your Email");
+    }else if(message==''){
+      alert("please enter your Message");
+    }else if(message.length<5 ){
+      alert("message must be atleast 5 characters long")
+    }else {
+      console.log("Form is submitted");
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Message: " + message);
     }
-    if (emailValue == '') {
-        alert("Please Enter Email");            
-    }else 
-        if(passVal==''){
-            alert('Please Enter Message');
-        }
-    }
+
+
+  
+  })
+
+
+});
 
         </script>
 </body>
