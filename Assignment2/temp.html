@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Add Bootstrap CSS link -->
+  
+  <style>
+     .center-div{
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  
+     
+  background-color: beige;
+      border-radius: 10%;
+      
+      height: 50%;
+               
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          
+    }
+           
+
+   
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    .mb-3 input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #000; 
+      padding: 5px; 
+      margin-bottom: 10px; 
+    }
+
+    .mb-3 button {
+    margin-left: -10%;
+      margin-top: 10px; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center-div ">
+    <form id="contact-form"  name="myform" >
+      <div class="mb-3 col-md-10">
+        <input name="Name" class="form-control" id="exampleInputName" aria-describedby="NameHelp" placeholder="Enter Your Name">
+      </div>
+      <div class="mb-3 col-md-10">
+        <input name="Email" type="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3 col-md-10">
+        <input name="Message" type="text" class="form-control" id="exampleInputMessage" placeholder="Enter Your Message Here">
+      </div>
+      <div  class="mb-3 "><button type="submit" id="Submit"  class="btn btn-primary" >Submit</button></div>
+      
+    </form>
+  </div>
+<script>
+//  function validateValues() {
+    
+//     var form = event.target;
+//     let nameValue=form.elements['Name'].value
+//     let emailValue = form.elements['Email'].value;
+//     let passVal= form.elements['Message'].value;
+
+//     if(nameValue==''){
+//         alert("Please Enter Name");
+     
+//     }else if(emailValue==''){
+//       alert("please enter email");
+//     }else if(passVal==''){
+//       alert("please enter message")
+//     }
+   
+//     }
+
+$(document).ready(function(){
+  $('#Submit').click(function(event){
+    event.preventDefault();
+    var name= $('#exampleInputName').val();
+    email=$('#exampleInputEmail1').val();
+    message=$('#exampleInputMessage').val();
+
+
+    if(name==''){
+      alert("please enter your Name");
+    }else if(email==''){
+      alert("please enter your Email");
+    }else if(message==''){
+      alert("please enter your Message");
+    }else if(message.length<5 ){
+      alert("message must be atleast 5 characters long")
+    }else {
+      console.log("Form is submitted");
+      console.log("Name: " + name);
+      console.log("Email: " + email);
+      console.log("Message: " + message);
+    }
+
+
+  
+  })
+
+
+});
+
+        </script>
+</body>
+
+   
+</html>
