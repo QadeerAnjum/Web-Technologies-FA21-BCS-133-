@@ -42,13 +42,40 @@
         </div>
     </nav>
 
-    
-<div class="container mt-5">
+
+    <div class="container mt-5">
         <h1 id="ajax" class="text-center">Ajax Restful API Example</h1>
         <div class="row mt-5" id="apiData">
-            <!-- Fetched data will be displayed here -->
+            
         </div>
     </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4"> CRUD Operations</h2>
+    
+        <!-- Create Form -->
+        <form id="createForm">
+            <div class="form-group">
+                <label for="createTitle">Title:</label>
+                <input type="text" class="form-control" id="createTitle" required value="new Title">
+            </div>
+            <div class="form-group">
+                <label for="createContent">Content:</label>
+                <textarea class="form-control" id="createContent" rows="3" required>New Content</textarea>
+            </div>
+            <button id="createBtn" type="submit" class="btn btn-primary">Create</button>
+            <button id="clearBtn" type="submit" class="btn btn-primary" style="display: none;">Clear</button>
+        </form>
+    
+        <hr>
+    
+        <!-- Display Stories -->
+        <div id="storiesList"></div>
+    
+    </div>
+    
+    
+
 
    
    
