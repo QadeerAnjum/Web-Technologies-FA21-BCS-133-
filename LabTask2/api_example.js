@@ -1,25 +1,26 @@
 // Function to fetch and display stories
 function displayStories() {
   $.ajax({
-    url: "https://usmanlive.com/wp-json/api/stories",
+    url: "https://jsonplaceholder.typicode.com/posts",
     method: "GET",
     dataType: "json",
     success: function (data) {
-      var storiesList = $("#storiesList");
-      storiesList.empty();
+      var List = $("#DataList");
+      List.empty();
 
       $.each(data, function (index, story) {
-        storiesList.append(
+        List.append(
           `<div class="mb-3">
-                <h3>${story.title}</h3>
-                <div>${story.content}</div>
-                <div>
-                    <button class="btn btn-info btn-sm mr-2 btn-edit" data-id="${story.id}">Edit</button>
-                    <button class="btn btn-danger btn-sm mr-2 btn-del" data-id="${story.id}">Delete</button>
-                </div>
+            <h1 class="Title">TITLE:</h1>
+            <h1> ${story.title}</h1>
+            <h1 class="Body">BODY: </h1>
+            <div>${story.body}</div>
+            <div>
+                <button class="btn btn-info btn-sm mr-2 btn-edit" data-id="${story.id}">Edit</button>
+                <button class="btn btn-danger btn-sm mr-2 btn-del" data-id="${story.id}">Delete</button>
             </div>
-            <hr />
-            `
+          </div>
+          <hr />`
         );
       });
     },
@@ -28,11 +29,12 @@ function displayStories() {
     },
   });
 }
+
 // Function to delete a story
 function deleteStory() {
   let storyId = $(this).attr("data-id");
   $.ajax({
-    url: "https://usmanlive.com/wp-json/api/stories/" + storyId,
+    url: `https://jsonplaceholder.typicode.com/posts/${storyId}`,
     method: "DELETE",
     success: function () {
       displayStories(); // Refresh the list after deleting a story
@@ -42,65 +44,67 @@ function deleteStory() {
     },
   });
 }
+
+// Function to handle form submission for creating or updating a story
 function handleFormSubmission(event) {
   event.preventDefault();
   let storyId = $("#createBtn").attr("data-id");
   var title = $("#createTitle").val();
-  var content = $("#createContent").val();
-  if (storyId) {
-    $.ajax({
-      url: "https://usmanlive.com/wp-json/api/stories/" + storyId,
-      method: "PUT",
+  var body = $("#createContent").val();
+  var method, url;
 
-      data: { title, content },
-      success: function () {
-        displayStories(); // Refresh the list after creating a new story
-      },
-      error: function (error) {
-        console.error("Error creating story:", error);
-      },
-    });
+  if (storyId) {
+    method = "PUT";
+    url = `https://jsonplaceholder.typicode.com/posts/${storyId}`;
   } else {
-    $.ajax({
-      url: "https://usmanlive.com/wp-json/api/stories",
-      method: "POST",
-      data: { title, content },
-      success: function () {
-        displayStories(); // Refresh the list after creating a new story
-      },
-      error: function (error) {
-        console.error("Error creating story:", error);
-      },
-    });
+    method = "POST";
+    url = "https://jsonplaceholder.typicode.com/posts";
   }
+
+  $.ajax({
+    url: url,
+    method: method,
+    data: { title, body },
+    success: function () {
+      displayStories(); // Refresh the list after creating/updating a story
+    },
+    error: function (error) {
+      console.error("Error creating/updating story:", error);
+    },
+  });
 }
+
+// Function to handle edit button click
 function editBtnClicked(event) {
   event.preventDefault();
   let storyId = $(this).attr("data-id");
   $.ajax({
-    url: "https://usmanlive.com/wp-json/api/stories/" + storyId,
+    url: `https://jsonplaceholder.typicode.com/posts/${storyId}`,
     method: "GET",
     success: function (data) {
       console.log(data);
       $("#clearBtn").show();
       $("#createTitle").val(data.title);
-      $("#createContent").val(data.content);
+      $("#createContent").val(data.body);
       $("#createBtn").html("Update");
       $("#createBtn").attr("data-id", data.id);
     },
     error: function (error) {
-      console.error("Error deleting story:", error);
+      console.error("Error retrieving story for editing:", error);
     },
   });
 }
+
 $(document).ready(function () {
   // Initial display of stories
-
   displayStories();
+
+  // Event listeners
   $(document).on("click", ".btn-del", deleteStory);
   $(document).on("click", ".btn-edit", editBtnClicked);
-  // Create Form Submission
   $("#createForm").submit(handleFormSubmission);
+  
+  // Clear form button
   $("#clearBtn").on("click", function (e) {
     e.preventDefault();
     $("#clearBtn").hide();

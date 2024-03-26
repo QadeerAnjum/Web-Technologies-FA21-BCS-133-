@@ -49,3 +49,13 @@ top: 5px;
     margin-right: 10px;
     border-radius: 20px;
 }
+
+.Title{
+    color: rgb(241, 199, 9);
+}
+.Body{
+    color: blueviolet;
+}
+#createBtn{
+
+}
