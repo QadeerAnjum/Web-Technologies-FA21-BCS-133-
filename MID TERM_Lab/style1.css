@@ -1,0 +1,39 @@
+
+header{
+    background-color:rgb(221, 222, 223);
+}
+
+.navbar-nav > li{
+    display: flex;
+    
+    padding-left:20px;
+    padding-right:30px;
+    font-size: 17px;
+    
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+#story-block{
+    left: 0;
+    display: flex;
+    right: 30px;
+}
+  .paras li {
+    border-bottom: 1px solid #000; 
+    
+    padding-bottom: 30px; 
+    padding-top: 10px;
+    list-style: none; 
+}
+
+.paras2{
+padding-left: 50%;
+}
+.catim > .imgo {
+    
+    padding-left: 2%;
+}
