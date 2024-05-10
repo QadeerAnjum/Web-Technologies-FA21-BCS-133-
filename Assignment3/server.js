@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose");
+
 let server = express();
 
 server.use(express.json());
@@ -46,14 +46,6 @@ server.get("/",  (req, res) => {
 server.listen(4000, () => {
   console.log("server started listening at localhost:4000");
 });
-mongoose
-  .connect("mongodb://0.0.0.0:27017/mernstack")
-  .then(() => {
-    console.log("DB Connected");
-  })
-  .catch((err) => {
-    console.log("Unable to connect to MongoDB:", err);
-  });
 
 
   
