@@ -1,0 +1,20 @@
+<h1>Organisations</h1>
+<ul>
+    <% organisations.forEach(organisation => { %>
+        <div class="org">
+            <img src="<%= organisation.image %>" alt="<%= organisation.name %>">
+            <h2><%= organisation.name %></h2>
+            <p><%= organisation.desc %></p>
+            <button class="donate-btn" onclick="donate()">Donate</button>
+            <hr>
+        </div>
+    <% }); %>
+</ul>
+
+<% if (totalPages > 1) { %>
+    <div>
+        <% for (let i = 1; i <= totalPages; i++) { %>
+            <a href="/?page=<%= i %>" <%= i === currentPage ? 'class="active"' : '' %>><%= i %></a>
+        <% } %>
+    </div>
+<% } %>
