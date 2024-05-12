@@ -27,11 +27,11 @@
                 <div class="border-bottom mb-4 pb-2">
                     <h2 class="mb-4 Receiver_Registration" style="text-align: center;">Receiver Registration</h2>
                 </div>
-                <form id="receiverRegistrationForm" action="/api/blood-bank-needy" method="post">
+                <form id="receiverRegistrationForm" action="/api/blood-bank-needy/" method="POST">
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <label for="bloodGroup" class="form-label">Blood Group:</label>
-                            <select id="bloodGroup" name="bloodGroup" class="form-select" aria-label="Blood Group" required>
+                            <label for="bloodGroup"  class="form-label">Blood Group:</label>
+                            <select id="bloodGroup" name="bloodGroup"  value="" class="form-select" aria-label="Blood Group" required>
                                 <option selected disabled>Select Blood Group</option>
                                 <option value="A+">A+</option>
                                 <option value="A-">A-</option>
@@ -48,13 +48,13 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="name" class="form-label">Name:</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" name="name"  value="" class="form-control" required>
                         </div>
                     
                     
                         <div class="col-md-6">
                             <label for="contactNumber" class="form-label">Contact Number:</label>
-                            <input type="tel" id="contactNumber" name="contactNumber" class="form-control" pattern="[0-9]{10}" required>
+                            <input type="tel" id="contactNumber" name="contactNumber"  value="" class="form-control" pattern="[0-9]{10}" required>
                             <div class="form-text">Please enter a 10-digit contact number.</div>
                         </div>
                        
@@ -62,7 +62,7 @@
                   
                         <div class="col-md-8">
                             <label for="address" class="form-label">Address:</label>
-                            <textarea id="address" name="address" class="form-control" rows="4" required></textarea>
+                            <textarea id="address" name="address"  value="" class="form-control" rows="4" required></textarea>
                         </div>
                     
                             <div>
