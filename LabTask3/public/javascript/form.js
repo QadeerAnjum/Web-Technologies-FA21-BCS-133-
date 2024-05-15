@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-  
+
 window.onload=function(){
   let contact=document.getElementById("contact");
 contact.onclick=openWin;
@@ -9,6 +10,9 @@ function openWin() {
 
  const login=document.querySelector("#login");
  
+
+
+
 
  home=document.querySelector(".home");
  form_container=document.querySelector(".form-container");
