@@ -43,7 +43,9 @@ router.post("/login", async function (req, res) {
             if((password !== user.password)) return res.redirect("/login")
 
         req.session.user = user;
+        res.cookie('userLoggedIn', 'true', { maxAge: 900000, httpOnly: true });
         console.log("REQSESSION: ",req.session.user)
+        
         res.redirect("/")
     // console.log(user)
     } catch (error) {

@@ -81,6 +81,7 @@ login.addEventListener("click",()=>{
 // js for bloodbank
 function showForm() {
   var role = document.querySelector('input[name="role"]:checked').value;
+ 
   if (role === "donor") {
       document.getElementById("donorForm").style.display = "block";
       document.getElementById("receiverForm").style.display = "none";

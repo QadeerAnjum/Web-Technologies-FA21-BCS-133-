@@ -350,3 +350,21 @@ background-color: beige;
 .blood_bank-list li p:last-child {
     margin-bottom: 0; /* Remove margin bottom for the last paragraph */
 }
+
+.bloodBankLOGO{
+   position: relative;
+   left: 3%;
+   
+ 
+    height: 100%;
+    transform:  rotate(45deg);
+}
+
+#donorQ{
+display: flex;
+justify-content: center;
+}
+
+#receiverRegistrationForm{
+    margin-left: 35%;
+}
