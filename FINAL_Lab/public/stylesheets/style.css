@@ -1,0 +1,370 @@
+body{
+   padding-top: 65px;
+}
+
+
+.container{
+    position: relative;
+    left: -10%;
+    }
+    
+    #icon {
+        transform: scaleX(-1);
+    filter: contrast(2%); 
+    position: relative;
+    top: -15px;
+    
+     }
+    .logo{
+       font-family: "DM Serif Display", serif;
+       font-size: 40px;
+    position: relative;
+    
+    top: 5px;
+    }
+    
+    .navbar-nav > li{
+        padding-left:20px;
+        padding-right:30px;
+        font-size: 17px;
+      }
+      .navbar-nav > li :hover {
+        transform: scale(1.5);
+    }
+    
+    .navbar-nav > li ::after {
+        content:' ';
+        height: 2px;
+        width: 100%;
+        background-color: aqua;
+        position:absolute;
+        left: 0;
+        bottom: -8px;
+        opacity: 0;
+        transition: all 0.2s;
+        pointer-events: none;
+    }
+    
+    .navbar-nav > li :hover::after {
+        opacity: 1;
+    }
+    
+    
+    
+    .navbar .container-fluid .btn{
+        margin-right: 10px;
+        border-radius: 20px;
+    }
+    
+    .custom-size{
+       width: 100%;
+        height: 600px;
+    }
+
+    
+    #simple_txt{
+        margin-top: 20%;
+        font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+        font-family: "DM Serif Display", serif;
+    }
+    #btxt{
+       
+        font-size: 1.2rem;
+    }    
+    .donation_pic{
+        margin-top: 10%;
+        height: 90%;
+        width: 110%;
+    }
+.carousel-item{
+    height:700px;
+}
+.c-image{
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer {
+  
+        
+   
+    bottom: 0;
+    
+    background-color: rgb(38, 38, 39);
+    height: 100px;
+   width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 50%;
+    position: fixed;  /* Change to fixed position */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10%;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+   
+
+.home.show .form-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* login page */
+
+form {
+    width: 90%;
+    max-width: 600px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 80px;
+    margin-left: 40%;
+    margin-bottom: 10%;
+}
+
+.inputbox {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.inputbox input {
+    height: 40px;
+    width: 90%;
+    border: none;
+    padding-left: 20px;
+     border-bottom: 1.5px solid gray;
+    background-color: transparent;
+    color: #fff;
+    margin-left: 10%;
+}
+
+.inputbox i {
+    position: absolute;
+    left: 10px;        
+    color: gray;
+    font-size: 24px;
+}
+
+.button {
+    margin-top: 10%;
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+
+
+  
+ .opt-field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .checkbox input{
+    accent-color: blue;
+ }
+
+ @media screen and (max-width: 768px) {
+    .form-container {
+        width: 80%;  /* Adjust the width for smaller screens */
+    }
+}
+
+
+.center-div{
+    display: flex;
+justify-content: center;
+align-items: center;
+
+   
+background-color: beige;
+    border-radius: 10%;
+    
+    height: 50%;
+             
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        
+  }
+         
+
+ 
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .mb-3 input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+  }
+
+  .mb-3 button {
+  margin-left: -10%;
+    margin-top: 10px; 
+  }
+
+
+  /* styles for CHARITY PAGE */
+
+  .org {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.org img {
+    max-width: 100%;
+    height: auto;
+}
+.donate-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.donate-btn:hover {
+    background-color: #45a049;
+}
+
+/* BLOOD BANK CSS */
+.bloo-bank {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bank_form-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.bank_form-container label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.bank_form-container input[type="radio"] {
+    margin: 0 10px;
+}
+.bank_form-container button {
+    background-color: #ffa500;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.bank_form-container button:hover {
+    background-color: #ff7f00; /* Change color on hover */
+}
+.blood_bank-list {
+    list-style: none;
+    padding: 0;
+}
+
+.blood_bank-list li {
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border color */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.3s ease; /* Add smooth transition effect */
+}
+
+.blood_bank-list li:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
+}
+
+.blood_bank-list li h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333; /* Darken the title color */
+}
+
+.blood_bank-list li p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666; /* Lighten the text color */
+}
+
+.blood_bank-list li p:last-child {
+    margin-bottom: 0; /* Remove margin bottom for the last paragraph */
+}
+
+.bloodBankLOGO{
+   position: relative;
+   left: 3%;
+   
+ 
+    height: 100%;
+    transform:  rotate(45deg);
+}
+
+#donorQ{
+display: flex;
+justify-content: center;
+}
+
+#receiverRegistrationForm{
+    margin-left: 35%;
+}

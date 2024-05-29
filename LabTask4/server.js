@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
 const ejsLayouts = require("express-ejs-layouts");
 
+
 const server = express();
 
 server.use(express.json());
@@ -27,6 +28,12 @@ server.use((req, res, next) => {
   res.locals.user = req.session.user || null;
   next();
 });
+
+
+
+
+
+
 
 const recieverRouter = require("./routes/api/blood-bank-needy");
 const userRouter = require("./routes/api/User");
@@ -69,6 +76,7 @@ server.get("/logout", (req, res) => {
   req.session.user = null;
   res.redirect("/");
 });
+
 
 server.listen(4000, () => {
   console.log("server started listening at localhost:4000");
